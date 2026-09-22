@@ -1,0 +1,323 @@
+<title>Spur Corp Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap">
+
+<style>
+  :root {
+    --bg: #181F23;
+    --ink: #F5F3F2;
+    --crimson: #B51D28;
+    --blue: #5683CA;
+    --pink: #F59AE3;
+    --muted: #7A8082;
+    --rule: #2A3236;
+    --header-bg: #111619;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', system-ui, sans-serif;
+    min-height: 100%;
+  }
+
+  /* ── Header ── */
+  header {
+    background: var(--header-bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    height: 56px;
+    gap: 16px;
+  }
+
+  .header-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .header-mark {
+    flex-shrink: 0;
+  }
+
+  .header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .header-name {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    color: var(--ink);
+  }
+
+  .header-sub {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1;
+  }
+
+  .header-cta {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--ink);
+    text-decoration: none;
+    white-space: nowrap;
+    opacity: 0.7;
+    transition: opacity 0.15s;
+  }
+
+  .header-cta:hover { opacity: 1; }
+
+  /* ── Colour stripe ── */
+  .stripe {
+    height: 2px;
+    background: linear-gradient(to right, var(--blue) 0%, var(--blue) 33%, var(--crimson) 33%, var(--crimson) 66%, var(--pink) 66%, var(--pink) 100%);
+  }
+
+  /* ── Hero ── */
+  .hero {
+    padding: 80px 32px 72px;
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin: 0 0 24px;
+  }
+
+  h1 {
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin: 0 0 20px;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+
+  h1 .accent { color: var(--pink); }
+
+  .hero-sub {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--muted);
+    margin: 0 auto 40px;
+    max-width: 40ch;
+  }
+
+  /* ── Paths ── */
+  .paths {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  @media (max-width: 560px) {
+    .paths { grid-template-columns: 1fr; }
+    .hero { padding: 56px 24px 56px; }
+    header { padding: 0 20px; }
+  }
+
+  .path {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 24px;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    text-decoration: none;
+    color: var(--ink);
+    background: rgba(255,255,255,0.03);
+    transition: border-color 0.15s, background 0.15s;
+  }
+
+  .path:hover {
+    border-color: rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.06);
+  }
+
+  .path-tag {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .path--signup .path-tag { color: var(--blue); }
+  .path--train  .path-tag { color: var(--pink); }
+
+  .path-label {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+
+  .path-sub {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.55;
+    flex: 1;
+  }
+
+  .path-arrow {
+    margin-top: 16px;
+    align-self: flex-start;
+  }
+
+  /* ── Brand strip ── */
+  .brand-section {
+    border-top: 1px solid var(--rule);
+    padding: 32px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .brand-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .brand-strip {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .brand-pill {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--rule);
+    padding: 5px 12px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 20px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .footer-text {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+</style>
+
+<!-- Header -->
+<header>
+  <a class="header-brand" href="#">
+    <svg class="header-mark" width="22" viewBox="0 0 213.03 212.18" aria-hidden="true">
+      <rect x="0" y="0"      width="195.62" height="47.6" rx="7" fill="#5683CA"/>
+      <rect x="0" y="54.86"  width="174.08" height="47.6" rx="7" fill="#B51D28"/>
+      <rect x="0" y="109.72" width="213.03" height="47.6" rx="7" fill="#F59AE3"/>
+      <rect x="0" y="164.58" width="69.49"  height="47.6" rx="7" fill="#F5F3F2"/>
+    </svg>
+    <div class="header-text">
+      <span class="header-name">Brand Academy</span>
+      <span class="header-sub">Spur Corporation</span>
+    </div>
+  </a>
+  <a class="header-cta" href="https://learn.spurcorpacademy.com">Go to the Academy →</a>
+</header>
+
+<!-- Colour stripe -->
+<div class="stripe" aria-hidden="true"></div>
+
+<!-- Hero -->
+<section class="hero">
+  <p class="eyebrow">Welcome</p>
+  <h1>Your next step starts<br>with the <span class="accent">brand.</span></h1>
+  <p class="hero-sub">Build your brand knowledge and apply it to the decisions you make every day.</p>
+
+  <div class="paths">
+    <a class="path path--signup" href="https://form.spurcorpacademy.com">
+      <span class="path-tag">New here</span>
+      <span class="path-label">Register for the Academy</span>
+      <span class="path-sub">Complete the sign-up form to get enrolled and receive your login details.</span>
+      <svg class="path-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M2 7h10M8 3l4 4-4 4" stroke="#5683CA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a class="path path--train" href="https://learn.spurcorpacademy.com">
+      <span class="path-tag">Already enrolled</span>
+      <span class="path-label">Enter the Academy</span>
+      <span class="path-sub">Log in with your registered email address to access your training.</span>
+      <svg class="path-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M2 7h10M8 3l4 4-4 4" stroke="#F59AE3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- Brands -->
+<div class="brand-section">
+  <p class="brand-label">Brands in the Academy</p>
+  <div class="brand-strip">
+    <span class="brand-pill">Spur</span>
+    <span class="brand-pill">Panarottis</span>
+    <span class="brand-pill">John Dory's</span>
+    <span class="brand-pill">RocoMamas</span>
+    <span class="brand-pill">Hussar Grill</span>
+    <span class="brand-pill">Casa Bella</span>
+    <span class="brand-pill">Doppio Zero</span>
+    <span class="brand-pill">Piza e Vino</span>
+    <span class="brand-pill">Modern Tailors</span>
+    <span class="brand-pill">Spur Grill &amp; Go</span>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <span class="footer-text">© 2026 Spur Corporation. All rights reserved.</span>
+  <svg width="20" viewBox="0 0 213.03 212.18" aria-hidden="true" style="opacity:0.3">
+    <rect x="0" y="0"      width="195.62" height="47.6" rx="7" fill="#5683CA"/>
+    <rect x="0" y="54.86"  width="174.08" height="47.6" rx="7" fill="#B51D28"/>
+    <rect x="0" y="109.72" width="213.03" height="47.6" rx="7" fill="#F59AE3"/>
+    <rect x="0" y="164.58" width="69.49"  height="47.6" rx="7" fill="#F5F3F2"/>
+  </svg>
+</footer>
